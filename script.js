@@ -8,14 +8,19 @@ const fetchMe = () => {
             response.json()
             
             .then(data => {
+                // console.log(data);
+                
                 data.name = userCity
                 city.innerHTML =`${data.name}`
-                  description.innerHTML =`${data.dataather[0].description}`
+                  description.innerHTML =`${data.weather[0].description}`
+                //   console.log(description.innerHTML);
+                  
                   humidity.innerHTML =`${data.main.humidity}%`
                   wind.innerHTML =`${data.wind.speed}m/s`
                   minTemp.innerHTML =`${data.main.temp_min}℃`
                   maxTemp.innerHTML =`${data.main.temp_max}℃`
                   pressure.innerHTML =`${data.main.pressure}hPa`
+                  Sealevel.innerHTML = `${data.main.sea_level}m`
                   feels.innerHTML =`${data.main.feels_like}℃`
                   temp.innerHTML =`${Math.round(data.main.temp)}℃`
                   myCity.innerHTML=`${data.name}, ${data.sys.country}`
